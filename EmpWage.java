@@ -1,15 +1,14 @@
 public class EmpWage
 {
-   public static final int rateperHr = 20;
    public static final int fullTime = 1;
    public static final int partTime = 2;
-   public static final int maxDays = 20;
-   public static final int maxHr = 100;
 
-   public static void computeEmpWage()
+   public static void computeEmpWage(String compName, int rateperHr, int maxDays, int maxHr)
    {
       int workHr,wage;
       int Salary = 0, totHr = 0, totDays = 0;
+
+		System.out.println("COMPANY : " + compName);
 
       while ( totHr < maxHr && totDays < maxDays )
       {
@@ -32,11 +31,13 @@ public class EmpWage
          Salary += wage;
       }
 
-      System.out.println("Total Salary of this Month is : " + Salary);
+      System.out.println("For Company : " + compName + " ,Total Salary of this Month is : " + Salary + "\n");
    }
    public static void main(String[] args)
    {
-      System.out.println("Welcome to Employee Wage Calculation !!");
-      computeEmpWage();
+      System.out.println("Welcome to Employee Wage Calculation !! \n");
+      computeEmpWage("abc",20,4,10);
+		computeEmpWage("xyz",40,6,20);
+
    }
 }
